@@ -38,6 +38,7 @@
                     <td><?php echo $getdata->car_body_situation; ?></td>
                     <td>
                         <a href="<?php echo add_query_arg(['action' => 'delete', 'item' => $getdata->car_id]) ?>">Delete</a>
+                        <a href="<?php echo add_query_arg(['action' => 'update', 'item' => $getdata->car_id]) ?>">Update</a>
                     </td>
 
 
