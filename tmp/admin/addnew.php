@@ -17,7 +17,7 @@
             <tr valign="top">
                 <th scope="row">Type</th>
                 <td>
-                    <select name="car-type" class="form-control">
+                    <select name="car_type" class="form-control">
                         <option value="">--Please Select--</option>
                         <option value="Sedan">Sedan</option>
                         <option value="SUV">SUV</option>
@@ -100,4 +100,16 @@
             </tr>
         </table>
     </form>
+</div>
+<div class="wrap">
+
+    <div>
+        <h1>You can insert a data by .json File</h1>
+    </div>
+
+    <form method="post" action="" enctype="multipart/form-data">
+        <input type="file" name="json_file">
+        <input type="submit" name="submit" value="Insert">
+    </form>
+
 </div>

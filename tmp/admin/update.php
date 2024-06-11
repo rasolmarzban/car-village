@@ -28,7 +28,7 @@
                     <tr valign="top">
                         <th scope="row">Type</th>
                         <td>
-                            <select name="car-type" class="form-control">
+                            <select name="car_type" class="form-control">
                                 <option value="">--Please Select--</option>
                                 <option value="Sedan">Sedan</option>
                                 <option value="SUV">SUV</option>
