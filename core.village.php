@@ -63,3 +63,21 @@ if (is_admin()) {
 }
 
 include PLUGIN_INC . 'common/public.php';
+
+function wp_register_plugin_styles()
+{
+    wp_register_style('core-village', PLUGIN_URL . 'assets/css/main.css');
+    wp_enqueue_style('core-village');
+
+    wp_register_script('corevillage-script', PLUGIN_URL . 'assets/js/corevilla.js', ['jquery'], '0.0.1', true);
+    wp_enqueue_script('corevillage-script');
+
+    wp_register_style('admin-corevillage', PLUGIN_URL . 'assets/css/admin-main.css');
+    wp_enqueue_style('admin-corevillage');
+
+    wp_register_script('corevillage-admin-script', PLUGIN_URL . 'assets/js/corevilla-admin.js');
+    wp_enqueue_script('corevillage-admin-script');
+}
+
+add_action('wp_enqueue_scripts', 'wp_register_plugin_styles');
+add_action('admin_enqueue_scripts', 'wp_register_plugin_styles');
