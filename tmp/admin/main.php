@@ -3,6 +3,9 @@
     <a href="admin.php?page=carvillage_menu-AddNew_slug">
         <input type="submit" class="button button-primary" value="ADD NEW" style="margin: 30px 10px;">
     </a>
+    <br></br>
+    <button id="sendAjaxrequest" class="button">Send a Request</button>
+    <br></br>
     <table class="widefat">
         <thead>
             <tr>

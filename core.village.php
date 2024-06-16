@@ -59,10 +59,11 @@ register_deactivation_hook(__FILE__, 'carvillage_deactivation');
 if (is_admin()) {
     include PLUGIN_INC . 'admin/menu.php';
 } else {
+    include PLUGIN_INC . 'ajax.php';
     include PLUGIN_INC . 'users/menu.php';
 }
-
 include PLUGIN_INC . 'common/public.php';
+
 
 function wp_register_plugin_styles()
 {
@@ -77,6 +78,8 @@ function wp_register_plugin_styles()
 
     wp_register_script('corevillage-admin-script', PLUGIN_URL . 'assets/js/corevilla-admin.js');
     wp_enqueue_script('corevillage-admin-script');
+
+    wp_localize_script('corevillage-admin-script', 'my_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'wp_register_plugin_styles');
