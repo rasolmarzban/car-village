@@ -59,27 +59,28 @@ register_deactivation_hook(__FILE__, 'carvillage_deactivation');
 if (is_admin()) {
     include PLUGIN_INC . 'admin/menu.php';
 } else {
-    include PLUGIN_INC . 'ajax.php';
+
     include PLUGIN_INC . 'users/menu.php';
 }
+include PLUGIN_INC . 'ajax.php';
 include PLUGIN_INC . 'common/public.php';
 
 
 function wp_register_plugin_styles()
 {
-    wp_register_style('core-village', PLUGIN_URL . 'assets/css/main.css');
-    wp_enqueue_style('core-village');
+    wp_register_style('core_village', PLUGIN_URL . 'assets/css/main.css');
+    wp_enqueue_style('core_village');
 
-    wp_register_script('corevillage-script', PLUGIN_URL . 'assets/js/corevilla.js', ['jquery'], '0.0.1', true);
-    wp_enqueue_script('corevillage-script');
+    wp_register_script('corevillage_script', PLUGIN_URL . 'assets/js/corevilla.js', ['jquery'], '0.0.1', true);
+    wp_enqueue_script('corevillage_script');
 
-    wp_register_style('admin-corevillage', PLUGIN_URL . 'assets/css/admin-main.css');
-    wp_enqueue_style('admin-corevillage');
+    wp_register_style('admin_corevillage', PLUGIN_URL . 'assets/css/admin-main.css');
+    wp_enqueue_style('admin_corevillage');
 
-    wp_register_script('corevillage-admin-script', PLUGIN_URL . 'assets/js/corevilla-admin.js');
-    wp_enqueue_script('corevillage-admin-script');
+    wp_register_script('corevillage_admin_script', PLUGIN_URL . 'assets/js/corevilla-admin.js');
+    wp_enqueue_script('corevillage_admin_script');
 
-    wp_localize_script('corevillage-admin-script', 'my_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+    wp_localize_script('corevillage_admin_script', 'my_ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
 add_action('wp_enqueue_scripts', 'wp_register_plugin_styles');
